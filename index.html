@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricardo David Sánchez Payva — Ingeniero Industrial</title>
+<meta name="description" content="Portafolio de Ricardo David Sánchez Payva — Ingeniero Industrial. Compras, operaciones y mejora de procesos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Special+Elite&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EAEDE3;
+    --surface:#F6F7F1;
+    --ink:#1E2A20;
+    --ink-soft:#57644F;
+    --ink-faint:#8B9683;
+    --rule:#C9CFBA;
+    --kraft:#C7A468;
+    --kraft-dark:#9C7E4C;
+    --kraft-tint:#EFE3C8;
+    --stamp:#A63D2A;
+    --stamp-tint:#F2E0D9;
+    --link:#2E4B34;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:
+      repeating-linear-gradient(to bottom, transparent, transparent 37px, var(--rule) 38px);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.55;
+  }
+  a{color:var(--link);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--stamp); outline-offset:3px;}
+
+  .eyebrow{
+    font-family:'Special Elite', monospace;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+
+  /* ---------- Folder tab nav ---------- */
+  .tabs{
+    max-width:920px;margin:0 auto;padding:26px 20px 0;
+    display:flex;gap:8px;flex-wrap:wrap;
+  }
+  .tab{
+    font-family:'Special Elite', monospace;
+    font-size:12.5px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink);
+    background:var(--kraft-tint);
+    border:1px solid var(--kraft-dark);
+    border-bottom:none;
+    padding:8px 16px 7px;
+    border-radius:6px 6px 0 0;
+    position:relative;
+    top:1px;
+  }
+  .tab:hover{background:var(--kraft);color:#2A2114;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 80px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--surface);
+    border:1px solid var(--kraft-dark);
+    border-radius:2px;
+    padding:44px 40px 40px;
+    margin-top:0;
+    position:relative;
+    box-shadow:0 1px 0 var(--rule);
+  }
+  .hero .filecode{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(34px, 5vw, 50px);
+    letter-spacing:-0.01em;
+    margin:0 0 6px;
+    line-height:1.05;
+  }
+  .role-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .intro{max-width:60ch;font-size:16.5px;color:var(--ink);}
+
+  .stamp{
+    position:absolute;
+    top:36px; right:44px;
+    width:150px;height:150px;
+    border:3px double var(--stamp);
+    border-radius:50%;
+    color:var(--stamp);
+    font-family:'Special Elite', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    transform:rotate(-9deg) scale(1);
+    opacity:.92;
+    animation:stampin .5s ease-out;
+    padding:14px;
+  }
+  .stamp span{display:block;}
+  @keyframes stampin{
+    0%{transform:rotate(-9deg) scale(1.5); opacity:0;}
+    70%{transform:rotate(-9deg) scale(0.96); opacity:.92;}
+    100%{transform:rotate(-9deg) scale(1); opacity:.92;}
+  }
+  @media (max-width:640px){ .stamp{position:static;margin:20px auto 0;} }
+
+  /* ---------- Section titles ---------- */
+  .section{margin-top:56px;}
+  .section-head{
+    display:flex;align-items:baseline;gap:12px;margin-bottom:20px;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:8px;
+  }
+  .section-head .eyebrow{white-space:nowrap;}
+  .section-head h2{
+    font-family:'Fraunces', serif;font-weight:600;font-size:22px;margin:0;
+  }
+
+  /* ---------- Checklist ---------- */
+  .checklist{list-style:none;margin:0;padding:0;}
+  .checklist li{
+    display:flex;gap:12px;align-items:baseline;
+    padding:9px 0;border-bottom:1px dashed var(--rule);
+    font-size:15.5px;
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist .mark{
+    font-family:'IBM Plex Mono', monospace;color:var(--link);font-weight:600;flex-shrink:0;
+  }
+
+  /* ---------- Project folders ---------- */
+  .projects{display:flex;flex-direction:column;gap:22px;}
+  .folder{
+    background:var(--surface);
+    border:1px solid var(--kraft-dark);
+    border-radius:2px;
+    padding:26px 28px;
+    position:relative;
+  }
+  .folder::before{
+    content:"";
+    position:absolute;
+    top:-10px;left:24px;
+    width:120px;height:10px;
+    background:var(--kraft-tint);
+    border:1px solid var(--kraft-dark);
+    border-bottom:none;
+    border-radius:6px 6px 0 0;
+  }
+  .folder-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+  .folder-top h3{
+    font-family:'Fraunces', serif;font-weight:600;font-size:21px;margin:0 0 6px;
+  }
+  .status{
+    font-family:'IBM Plex Mono', monospace;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;
+    background:var(--kraft-tint);color:#5C3F16;border:1px solid var(--kraft-dark);
+    padding:3px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .folder p{margin:10px 0 16px;font-size:15.5px;max-width:62ch;}
+  .tech-line{
+    font-family:'IBM Plex Mono', monospace;font-size:12.5px;color:var(--ink-soft);margin-bottom:16px;
+  }
+  .folder-links{display:flex;gap:10px;flex-wrap:wrap;}
+  .folder-links a{
+    font-family:'IBM Plex Mono', monospace;font-size:13px;
+    text-decoration:none;color:var(--ink);
+    border:1px solid var(--ink-faint);border-radius:6px;
+    padding:7px 14px;
+  }
+  .folder-links a:hover{background:var(--kraft-tint);border-color:var(--kraft-dark);}
+  .folder-links a.primary{background:var(--link);color:#F6F7F1;border-color:var(--link);}
+  .folder-links a.primary:hover{background:#233A29;}
+
+  /* ---------- Contact / signature ---------- */
+  .contact-card{
+    background:var(--surface);border:1px solid var(--kraft-dark);border-radius:2px;padding:30px 32px;
+  }
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-top:16px;}
+  @media (max-width:560px){.contact-grid{grid-template-columns:1fr;}}
+  .field{border-bottom:1px solid var(--rule);padding-bottom:8px;}
+  .field .flabel{font-family:'IBM Plex Mono', monospace;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:4px;}
+  .field a, .field span.val{font-size:15.5px;}
+  .sign-line{margin-top:28px;font-family:'Special Elite', monospace;font-size:13px;color:var(--ink-soft);}
+
+  footer{
+    max-width:920px;margin:0 auto;padding:30px 20px 50px;
+    font-family:'IBM Plex Mono', monospace;font-size:12px;color:var(--ink-faint);
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<nav class="tabs">
+  <a class="tab" href="#perfil">Perfil</a>
+  <a class="tab" href="#proyectos">Proyectos</a>
+  <a class="tab" href="#contacto">Contacto</a>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero" id="perfil">
+    <div class="filecode">EXPEDIENTE N.° 2026-07 · AREQUIPA, PERÚ</div>
+    <h1>Ricardo David Sánchez Payva</h1>
+    <div class="role-line">Ingeniero Industrial — Compras, operaciones y mejora de procesos</div>
+    <p class="intro">Cuatro años de experiencia en logística, administración, gestión comercial y proyectos,
+      con paso por el área de compras de Southern Perú Copper Corporation. Trabajo a diario con SAP y Excel
+      avanzado (incluyendo macros), y suelo construir herramientas propias — hojas de cálculo, dashboards
+      en Power BI o pequeñas aplicaciones web — cuando encuentro un proceso que se puede ordenar mejor.
+      Busco aportar en empresas del sector minero o industrial mediante la mejora continua y la eficiencia
+      operativa.</p>
+    <div class="stamp"><span>Disponible<br>sector minero<br>e industrial</span></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">Inventario</span>
+      <h2>Fortalezas</h2>
+    </div>
+    <ul class="checklist">
+      <li><span class="mark">✓</span> SAP Integral y SAP SRM — órdenes de compra y seguimiento de proveedores</li>
+      <li><span class="mark">✓</span> Excel avanzado con macros (VBA) y Power BI para reportes y dashboards</li>
+      <li><span class="mark">✓</span> Documentación técnica y de seguridad (dossiers, IPERC, PETAR, ATS, ISO 45001/14001/9001)</li>
+      <li><span class="mark">✓</span> Gestión de compras, contratos y evaluación de proveedores</li>
+      <li><span class="mark">✓</span> Facturación, cobranzas y control documental de proyectos</li>
+      <li><span class="mark">✓</span> Inglés intermedio, licencia de conducir vigente, disponibilidad para reubicarme</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="eyebrow">Bitácora</span>
+      <h2>Experiencia</h2>
+    </div>
+    <ul class="checklist">
+      <li><span class="mark">2025</span> Becario de Compras — Southern Perú Copper Corporation, Ilo. Gestión de órdenes de compra en SAP SRM y cuadros comparativos de proveedores.</li>
+      <li><span class="mark">2024</span> Asistente Administrativo de Facturación y Cobranzas — SML Partners, Arequipa. Recuperación del 80% de facturas vencidas; dashboards en Power BI.</li>
+      <li><span class="mark">2022-24</span> Asistente de Proyectos — Prosermind, Arequipa. Informes técnicos y de seguridad (Dossiers, PGA, SST, IPERC).</li>
+      <li><span class="mark">2026</span> Operador del Centro de Cómputo — ONPE, Arequipa. Soporte operativo durante el proceso electoral nacional.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="proyectos">
+    <div class="section-head">
+      <span class="eyebrow">Casos</span>
+      <h2>Proyectos</h2>
+    </div>
+    <div class="projects">
+
+      <div class="folder">
+        <div class="folder-top">
+          <h3>Bitácora de Postulaciones</h3>
+          <span class="status">En línea</span>
+        </div>
+        <p>Aplicación web para registrar y controlar mis postulaciones laborales diarias por portal,
+          con metas diarias y semanales, seguimiento de racha, y acceso con cuenta de correo para
+          ver el mismo registro desde el celular y la computadora.</p>
+        <div class="tech-line">HTML · Firebase (autenticación y base de datos) · Diseño responsive</div>
+        <div class="folder-links">
+          <a class="primary" href="https://ricdavsan.github.io/Postulaciones/" target="_blank" rel="noopener">Ver demo ↗</a>
+          <a href="https://github.com/Ricdavsan/Postulaciones" target="_blank" rel="noopener">Ver código ↗</a>
+        </div>
+      </div>
+
+      <div class="folder">
+        <div class="folder-top">
+          <h3>Manual Coupa — Compradores de Bienes</h3>
+          <span class="status">En línea</span>
+        </div>
+        <p>Manual interactivo para el uso de Coupa en procesos de compras (Grupo México / Southern Perú),
+          construido a partir de mi propia experiencia en el área. Incluye navegación por secciones,
+          buscador, seguimiento de progreso de lectura y un glosario de términos de procurement.</p>
+        <div class="tech-line">HTML · CSS · JavaScript · Buscador integrado · Seguimiento de progreso · Glosario</div>
+        <div class="folder-links">
+          <a class="primary" href="https://ricdavsan.github.io/manual-coupa-spcc/" target="_blank" rel="noopener">Ver demo ↗</a>
+          <a href="https://github.com/Ricdavsan/manual-coupa-spcc" target="_blank" rel="noopener">Ver código ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="contacto">
+    <div class="section-head">
+      <span class="eyebrow">Firma</span>
+      <h2>Contacto</h2>
+    </div>
+    <div class="contact-card">
+      <div class="contact-grid">
+        <div class="field">
+          <span class="flabel">Correo</span>
+          <a href="mailto:spricardodavid@gmail.com">spricardodavid@gmail.com</a>
+        </div>
+        <div class="field">
+          <span class="flabel">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/ricardodavidsanchezpayva/" target="_blank" rel="noopener">linkedin.com/in/ricardodavidsanchezpayva</a>
+        </div>
+        <div class="field">
+          <span class="flabel">Teléfono / WhatsApp</span>
+          <span class="val">+51 980 916 161</span>
+        </div>
+        <div class="field">
+          <span class="flabel">Ubicación</span>
+          <span class="val">Arequipa, Perú</span>
+        </div>
+      </div>
+      <div class="folder-links" style="margin-top:20px;">
+        <a class="primary" href="CV-Ricardo-David-Sanchez-Payva.pdf" download>Descargar CV (PDF) ↓</a>
+      </div>
+      <div class="sign-line">— Documento generado y mantenido por Ricardo David Sánchez Payva.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>© 2026 Ricardo David Sánchez Payva · Portafolio</footer>
+
+</body>
+</html>
